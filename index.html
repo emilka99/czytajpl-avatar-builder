@@ -24,15 +24,11 @@
   }
   /* ---------- moving sky ---------- */
   .scene{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}
-  .clouds{position:absolute;left:0;top:0;width:100%;height:100%;
-    background-repeat:repeat-x;image-rendering:pixelated;will-change:background-position}
-  .clouds.far{
-    background-image:url(assets/clouds-far.png);background-size:1600px auto;
-    background-position:0 6%;animation:drift 90s linear infinite;opacity:.9}
-  .clouds.near{
-    background-image:url(assets/clouds-near.png);background-size:1600px auto;
-    background-position:0 22%;animation:drift 55s linear infinite}
-  @keyframes drift{ from{background-position-x:0} to{background-position-x:1600px} }
+  .sky-track{display:flex;height:100%;width:max-content;
+    animation:sky 70s linear infinite;will-change:transform}
+  .sky-tile{height:100%;aspect-ratio:4000/500;flex:0 0 auto;
+    background:url(assets/clouds-bg.jpg) center/cover no-repeat;image-rendering:pixelated}
+  @keyframes sky{ from{transform:translateX(-50%)} to{transform:translateX(0)} }
 
   /* ---------- drifting logo watermark ---------- */
   .logo-band{
@@ -107,8 +103,10 @@
 </head>
 <body>
   <div class="scene">
-    <div class="clouds far"></div>
-    <div class="clouds near"></div>
+    <div class="sky-track">
+      <div class="sky-tile"></div>
+      <div class="sky-tile"></div>
+    </div>
   </div>
   <div class="logo-band"></div>
 
