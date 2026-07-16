@@ -52,27 +52,27 @@
   .hero-card{
     flex:0 0 auto;width:480px;max-width:100%;
     padding:0 24px 24px;position:relative;overflow:visible;
-    display:flex;align-items:flex-end;justify-content:center;height:640px;
+    display:flex;align-items:flex-end;justify-content:center;height:720px;
   }
   .hero-stack{position:relative;display:flex;justify-content:center;width:100%}
   .hero-shadow{position:absolute;bottom:2%;left:50%;transform:translateX(-50%);
     width:74%;opacity:.38;z-index:0;pointer-events:none}
-  .char-box{position:relative;z-index:1;height:800px}
+  .char-box{position:relative;z-index:1;height:900px}
   .char{height:100%;width:auto;display:block}
   .animal{position:absolute;z-index:2;display:none;image-rendering:pixelated}
   #animal-dog{height:30%;left:-4%;bottom:0}
-  #animal-bird{height:13.5%;left:46.97%;top:-7.5%}
+  #animal-bird{height:11.5%;left:47.76%;top:-7.5%}
   .animal.show{display:block}
 
   .options-card{
-    flex:0 0 auto;width:520px;max-width:100%;padding:38px 40px;height:640px;
+    flex:0 0 auto;width:520px;max-width:100%;padding:38px 40px;height:720px;
     display:flex;flex-direction:column;
   }
   .options-card h1{display:flex;align-items:center;justify-content:space-between;gap:16px;
-    font-size:21px;font-weight:400;text-transform:uppercase;letter-spacing:.02em;margin-bottom:26px}
+    font-size:27px;font-weight:600;text-transform:uppercase;letter-spacing:.02em;margin-bottom:24px}
   .options-card h1 .title-txt{flex:1 1 auto}
   .title-logo{height:22px;width:auto;flex:0 0 auto;filter:brightness(0);opacity:.85}
-  .group{margin-bottom:24px}
+  .group{margin-bottom:18px}
   .group > label{display:block;font-size:16px;font-weight:700;margin-bottom:10px}
   .swatches{display:flex;gap:14px}
   .sw{width:52px;height:52px;border-radius:12px;cursor:pointer;position:relative;
@@ -82,7 +82,7 @@
   .sw[aria-checked="true"]{outline:3px solid var(--ring);outline-offset:3px;border-color:transparent}
   .sw .noicon{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
     font-size:22px;color:#b6b6b6}
-  .dl-row{margin-top:6px;display:flex;flex-direction:column;align-items:center;gap:8px}
+  .dl-row{margin-top:auto;padding-top:10px;display:flex;flex-direction:column;align-items:center;gap:8px}
   .dl-btn{background:none;border:0;padding:0;cursor:pointer;image-rendering:pixelated;
     transition:transform .05s ease}
   .dl-btn img{display:block;width:240px;height:auto;image-rendering:pixelated}
@@ -181,7 +181,7 @@
 <script>
   const PANTS_MAP = { blue:"blue", pink:"pink", purple:"yellow" };
   const state = { hair:"navy", blouse:"white", pants:"blue", animal:"none" };
-  const BIRD = { h:0.135, cx:0.523, by:0.06 };
+  const BIRD = { h:0.115, cx:0.523, by:0.04 };
   const DOG  = { h:0.30, x:-0.04, by:1.0 };
 
   const img = document.getElementById('char');
