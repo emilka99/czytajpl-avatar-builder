@@ -25,17 +25,19 @@
   /* ---------- moving sky ---------- */
   .scene{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}
   .sky-track{display:flex;height:100%;width:max-content;
-    animation:sky 70s linear infinite;will-change:transform}
+    animation:sky 100s linear infinite;will-change:transform}
   .sky-tile{height:100%;aspect-ratio:4000/500;flex:0 0 auto;
     background:url(assets/clouds-bg.jpg) center/cover no-repeat;image-rendering:pixelated}
   @keyframes sky{ from{transform:translateX(-50%)} to{transform:translateX(0)} }
 
-  /* ---------- drifting logo watermarks (flow with clouds) ---------- */
-  .logo-layer{position:absolute;inset:0;overflow:hidden;pointer-events:none}
-  .logo-track{display:flex;height:100%;width:max-content;
-    animation:logos 60s linear infinite;will-change:transform}
-  .logo-set{position:relative;width:2000px;height:100%;flex:0 0 auto}
-  .logo-set img{position:absolute;filter:brightness(0) invert(1);opacity:.7}
+  /* ---------- big logos, one centered line, flow with clouds ---------- */
+  .logo-layer{position:absolute;inset:0;overflow:hidden;pointer-events:none;
+    display:flex;align-items:center}
+  .logo-track{display:flex;align-items:center;width:max-content;
+    animation:logos 86s linear infinite;will-change:transform}
+  .logo-set{display:flex;align-items:center;flex:0 0 auto}
+  .logo-set img{height:280px;width:auto;margin:0 80px;
+    filter:brightness(0) invert(1);opacity:.7}
   @keyframes logos{ from{transform:translateX(-50%)} to{transform:translateX(0)} }
 
   /* ---------- modal ---------- */
@@ -90,9 +92,7 @@
     .hero-card{width:100%;min-height:420px}
     .char-box{height:380px}
     .options-card{width:100%}
-    .logo-band{height:80px;-webkit-mask-size:690px 60px;mask-size:690px 60px}
-    @keyframes logodrift{from{-webkit-mask-position-x:0;mask-position-x:0}
-                         to{-webkit-mask-position-x:690px;mask-position-x:690px}}
+    .logo-set img{height:130px;margin:0 40px}
   }
 </style>
 </head>
@@ -105,20 +105,12 @@
     <div class="logo-layer">
       <div class="logo-track">
         <div class="logo-set">
-          <img src="assets/logo-brand.svg" style="left:120px;top:12%;width:260px">
-          <img src="assets/logo.svg"       style="left:520px;top:40%;width:300px">
-          <img src="assets/logo-brand.svg" style="left:1000px;top:70%;width:200px">
-          <img src="assets/logo.svg"       style="left:1350px;top:18%;width:270px">
-          <img src="assets/logo-brand.svg" style="left:1650px;top:52%;width:230px">
-          <img src="assets/logo.svg"       style="left:300px;top:82%;width:240px">
+          <img src="assets/logo-brand.svg" alt="">
+          <img src="assets/logo.svg" alt="">
         </div>
         <div class="logo-set">
-          <img src="assets/logo-brand.svg" style="left:120px;top:12%;width:260px">
-          <img src="assets/logo.svg"       style="left:520px;top:40%;width:300px">
-          <img src="assets/logo-brand.svg" style="left:1000px;top:70%;width:200px">
-          <img src="assets/logo.svg"       style="left:1350px;top:18%;width:270px">
-          <img src="assets/logo-brand.svg" style="left:1650px;top:52%;width:230px">
-          <img src="assets/logo.svg"       style="left:300px;top:82%;width:240px">
+          <img src="assets/logo-brand.svg" alt="">
+          <img src="assets/logo.svg" alt="">
         </div>
       </div>
     </div>
